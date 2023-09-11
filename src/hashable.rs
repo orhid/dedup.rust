@@ -3,6 +3,7 @@ use std::{collections::HashSet, hash::Hash};
 /* # dedup */
 
 /// removes consecutive equal elements
+#[derive(Debug, Clone)]
 pub struct DedupHash<I>
 where
     I: Iterator,
@@ -48,6 +49,7 @@ impl<I> DedupHashAdapter for I where I: Iterator {}
 /* # dedup by */
 
 /// removes consecutive elements, whose equality is asserted by provided function
+#[derive(Debug, Clone)]
 pub struct DedupHashBy<I, F>
 where
     I: Iterator,
@@ -96,6 +98,7 @@ impl<I, F> DedupHashByAdapter<F> for I where I: Iterator {}
 /* # dedup by key */
 
 /// removes consecutive elements, which give equal outputs from provided function
+#[derive(Debug, Clone)]
 pub struct DedupHashByKey<I, F, K>
 where
     I: Iterator,

@@ -1,6 +1,7 @@
 /* # dedup */
 
 /// removes consecutive equal elements
+#[derive(Debug, Clone)]
 pub struct DedupNonCon<I>
 where
     I: Iterator,
@@ -46,6 +47,7 @@ impl<I> DedupNonConAdapter for I where I: Iterator {}
 /* # dedup by */
 
 /// removes consecutive elements, whose equality is asserted by provided function
+#[derive(Debug, Clone)]
 pub struct DedupNonConBy<I, F>
 where
     I: Iterator,
@@ -94,6 +96,7 @@ impl<I, F> DedupNonConByAdapter<F> for I where I: Iterator {}
 /* # dedup by key */
 
 /// removes consecutive elements, which give equal outputs from provided function
+#[derive(Debug, Clone)]
 pub struct DedupNonConByKey<I, F, K>
 where
     I: Iterator,
